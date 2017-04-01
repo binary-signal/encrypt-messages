@@ -6,9 +6,6 @@
 #define ALPHABET_SIZE 32
 
 
-
-
-
 void print_char_array(char [], unsigned long );
 int* parse_to_dec(char* , unsigned long );
 int isValidChar(char , char* );
@@ -24,10 +21,9 @@ int code_array[ALPHABET_SIZE];
 char char_array[ALPHABET_SIZE];
 
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]) {
 
-	char* user_in = NULL;
+    char* user_in = NULL;
     int* msg_dec = NULL;
     char* num_5bit = NULL;
     char* num_8bit = NULL;
@@ -89,7 +85,7 @@ int main(int argc, const char * argv[])
 
 
     //check every character in user input and decide if it can be decoded given tha character set we have
-	for(i=0; i<strlen(user_in)-1; i++) {
+    for(i=0; i<strlen(user_in)-1; i++) {
 		if(isValidChar(user_in[i], char_array) == 1) {
 			continue;
 		}
@@ -107,9 +103,9 @@ int main(int argc, const char * argv[])
 
 
     //first stage encryption transform characters to demical digits
-
-	msg_dec = parse_to_dec(user_in,msg_len);
-		printf("Decical represantetion\n" );
+    msg_dec = parse_to_dec(user_in,msg_len);
+    printf("Decical represantetion\n" );
+	
     //print the demical represantetion of the message
     print_dec_array(msg_dec,msg_len );
 
